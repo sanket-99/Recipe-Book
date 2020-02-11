@@ -1,0 +1,49 @@
+<br>
+<br>
+<br>
+<div class="container" style="height: auto; width: auto; background-color: blanchedalmond;">
+    <br>
+    <h4 style="color: brown; text-align: center;">Shopping List</h4>
+    <br>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+    <div class="row">
+        <div class="col-xs-12">
+            Name :
+            <input type="text" name="name" ngModel required>
+        </div>
+    </div>
+    &nbsp; &nbsp;
+    <div class="row">
+        <div class="col-xs-12">
+            Amount :
+            <input type="number" name="amount" ngModel required>
+        </div>
+    </div>
+    <br>
+
+    <button class="btn btn-primary">{{ editMode?"Edit":"Add" }} </button>
+
+    
+    <br><br>
+    <div *ngIf="ingredients.length>0">  
+        <h4 style="text-align: center; color: brown;">Ingredient List </h4>
+      
+          <ul type="none">
+        <p *ngFor="let ingrdient of ingredients;let i=index" style="text-align: center;">
+            <b>
+                {{ ingrdient.name|uppercase }} :: {{ ingrdient.amount}} <button class="btn btn-danger btn-sm" (click)="onDelete(i)" type="button">X</button> &nbsp; 
+                <button type="button" class="btn btn-success btn-sm" (click)="onUpdate(i)">Update Ingredient Mode</button>
+            </b>        
+        </p>
+        </ul>
+        
+
+    </div>
+
+    </form>
+    <br>
+    <br>
+    
+   
+</div>

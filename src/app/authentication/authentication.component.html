@@ -1,0 +1,32 @@
+<div class="container" style="height: auto; width: auto; background-color: blanchedalmond;">
+    <br>
+    <div class="alert alert-danger" *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+    </div>
+    <h4 style="color: brown; text-align: center;">Login / SignUp</h4>
+    <br>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="row">
+        <div class="col-xs-12">
+            Email :
+            <input type="email" name="email" ngModel required email>
+        </div>
+        <br> <br>
+        <div class="col-xs-12">
+            Password :
+            <input type="password" name="password" ngModel required>
+        </div>
+        <br>
+        <br> <br>
+        <div class="row">
+            <div class="col-xs-12">
+        <button type="submit" class="btn btn-success">{{ loginMode?"Login":"SignUp" }}</button> &nbsp;
+        <button type="button" class="btn btn-primary" (click)="loginMode=!loginMode">Switch To {{ loginMode?"SignUp":"Login" }}</button>
+            </div>
+        </div>
+
+    </div>
+    </form>
+
+
+</div>

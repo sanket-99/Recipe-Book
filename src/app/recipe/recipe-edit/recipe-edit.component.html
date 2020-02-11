@@ -1,0 +1,50 @@
+
+
+<div class="container" style="height: auto; width: auto; background-color: blanchedalmond;">
+    <h4 style="text-align: center; color: brown;"> Recipe Edit/New </h4>
+    <form [formGroup]="recipeEditForm" (ngSubmit)="onSubmit()">
+        <b>
+    <div class="row">
+        <div class="col-xs-12">
+            Id:
+            <input type="number" formControlName="id">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-12">
+            Title:
+            <input type="text" formControlName="title">
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-xs-12">
+            Description:
+            <textarea name="" id="" cols="30" rows="10" formControlName="description"></textarea>
+        </div>
+    </div>
+    <br>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            ImagePath:
+            <input type="text" formControlName="imagePath">
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="{{imagePath}}" alt="" style="height: 120px; width: 120px;">
+        </div>
+    </div>
+    <br>
+
+    <button class="btn btn-success">{{ editMode? "UPDATE":"ADD" }}</button>
+    </b>
+    </form>
+
+</div>

@@ -1,0 +1,59 @@
+<div class="container" style="height: auto; width: auto; background-color: blanchedalmond;">
+    <h4 style="text-align: center; color: brown;">Recipe Details</h4>
+<div class="row">
+    <div class="col-xs-12">
+
+        <b>
+        <div class="row">
+            <div class="col-xs-12">
+                Id:
+                {{ recipe.id }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-12">
+                Title:
+                {{ recipe.title }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-12">
+                Description:
+                {{ recipe.description }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="{{ recipe.imagePath}}" alt="" style="height: 120px; width: 120px;"> 
+            </div>
+        </div>
+        <br>
+        <br>
+        <h4 style="text-align: left; color: brown;">Ingredients</h4>
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div *ngFor="let ingredient of recipe.ing;let i=index">
+                    <ul>
+                        <li>{{ ingredient.name }} {{ ingredient.amount }}</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        </b>
+
+        <br>
+        <button class="btn btn-primary" (click)="updateRecipe()">Update Recipe</button> &nbsp;
+        <button class="btn btn-danger" (click)="deleteRecipe()">Delete Recipe</button>  &nbsp;
+        <button class="btn btn-success" (click)="addIngredientToShoppingList()">Add Ingredients</button>
+    </div>
+</div>
+
+</div>

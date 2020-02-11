@@ -1,0 +1,7 @@
+<a routerLink=""><h3>Recipe App</h3></a>
+<a routerLink="new" routerLinkActive="active" *ngIf="isAuthenticated">New Recipe</a> &nbsp; &nbsp; &nbsp; <a routerLink="shopping-list" routerLinkActive="active" *ngIf="isAuthenticated">Shopping List</a> &nbsp; &nbsp; &nbsp;
+<a routerLink="authentication" routerLinkActive="active" *ngIf="!isAuthenticated">Authentication</a>
+<div class="pull-right">
+    <button class="btn btn-success btn-sm" (click)="onStore()"> Store Recipes</button> &nbsp;
+    <button class="btn btn-danger btn-sm" (click)="onFetch()"> Fetch Recipes</button>
+</div>
